@@ -15,11 +15,13 @@ export class SUSComponent implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
+  selectedFiles;
 
   choiceSelected: string;
   choice: string[] = ['yes', 'no'];
   selectFile(event) {
     // here we have the result of the picture
+    this.selectedFiles = event.target.files;
     console.log(event.target.files);
   }
   constructor(private _formBuilder: FormBuilder) {}
